@@ -6,18 +6,63 @@
     <title>jQuery Template</title>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
-        $(function(){
-            
+        $(function() {
+            $('#submit-button').click(function() {
+                $('div').css('background-color', 'red');
+            });
+            $('#submit-button').click(function() {
+                $('div').css('font-family', 'Verdana');
+            });
+            $('button').click(function() {
+                var name = $("#name").val();
+                var sport = $("#sport").val();
+                var story = "My name is " +
+                    name + " and I love " + sport + ". "
+
+
+                console.log(story);
+                $("div").html(story);
+            });
+
+
+
         });
-        
     </script>
+
+    <style>
+        .banner {
+            width: 700px;
+            height: 300px;
+            background-color: gray;
+            color: white;
+        }
+        
+        h3 {
+            text-align: center;
+            font-size: 60px;
+        }
+    </style>
 
 </head>
 
 <body>
-    <p>
-    repo
-    </p>
+    Favorite Color
+    <input type="color" name="favorite-color" placeholder="Favorite Color"><br> Favorite Font
+    <select name="Favorite-Font">
+            <option value="Ariel" selected> Ariel </option>
+            <option value="Times-New-Roman" selected> Times New Roman</option>
+            <option value="Georgia" selected>Georgia</option>
+            <option value="Courier-New" selected>Courier New</option>
+            <option value="Verdana" selected>Verdana</option>
+            </select><br> Name
+    <input id="name"><br> Name<input id="sport"><br>
+    <button id="submit-button">Submit</button>
+    
+    </form>
+    <div class="banner">
+        <h3> Text </h3>
+    </div>
+
 </body>
 
 </html>
