@@ -7,17 +7,15 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
         $(function() {
-            $('#submit-button').click(function() {
-                $('div').css('background-color', 'red');
-            });
-            $('#submit-button').click(function() {
-                $('div').css('font-family', 'Verdana');
-            });
             $('button').click(function() {
                 var name = $("#name").val();
                 var sport = $("#sport").val();
                 var story = "My name is " +
-                    name + " and I love " + sport + ". "
+                    name + " and my favorite sport is " + sport + ". "
+                var favcolor= $("#favcolor").val();
+                var favfont= $("#favfont").val();
+                $('div').css('background-color', favcolor);
+                $('div').css('font-family', favfont);
 
 
                 console.log(story);
@@ -47,8 +45,8 @@
 
 <body>
     Favorite Color
-    <input type="color" name="favorite-color" placeholder="Favorite Color"><br> Favorite Font
-    <select name="Favorite-Font">
+    <input type="color" name="favorite-color" id="favcolor"><br> Favorite Font
+    <select name="Favorite-Font" id="favfont">
             <option value="Ariel" selected> Ariel </option>
             <option value="Times-New-Roman" selected> Times New Roman</option>
             <option value="Georgia" selected>Georgia</option>
